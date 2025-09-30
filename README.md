@@ -2,8 +2,8 @@
 UNCW CSC-461 Virutal Reality group projects
 
 ### Authors
-Ryan Ferrral
-Sinclair DeYoung
+- Ryan Ferrral
+- Sinclair DeYoung
 
 ---
 
