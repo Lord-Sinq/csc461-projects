@@ -11,7 +11,7 @@ UNCW CSC-461 Virtual Reality group projects
 
 In this museum you'll find the 10 prominent celestial bodies that grace our solar system. We chose the solar system due to a mutual fascination with the subject. To get some information about the exhibits, approach the pedestals they rest and some text will appear.
 
-BONUSES:
+#### BONUSES:
 
 1) There are 10 exhibits, each with a reactive element.
 2) Each exhibit is animated to spin.
@@ -19,3 +19,11 @@ BONUSES:
 
 Video that shows me walking around the scene and activating exhibits.
 https://www.youtube.com/watch?v=hs_eAtpMVx4
+
+##### Photos:
+Overhead
+![alt text](https://github.com/Lord-Sinq/csc461-projects/ScreenShots/a2a1.png)
+Side View
+![alt text](https://github.com/Lord-Sinq/csc461-projects/ScreenShots/a2a2.png)
+Displayed in 3d
+![alt text](https://github.com/Lord-Sinq/csc461-projects/ScreenShots/a2a3.png)
