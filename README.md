@@ -24,6 +24,6 @@ https://www.youtube.com/watch?v=hs_eAtpMVx4
 Overhead
 ![alt text](https://github.com/Lord-Sinq/csc461-projects/ScreenShots/a2a1.png)
 Side View
-![alt text](ScreenShots/a2a2.png)
+![alt text](../ScreenShots/a2a2.png)
 Displayed in 3d
 ![alt text](https://github.com/Lord-Sinq/csc461-projects/ScreenShots/a2a3.png)
