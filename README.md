@@ -22,8 +22,8 @@ https://www.youtube.com/watch?v=hs_eAtpMVx4
 
 ##### Photos:
 Overhead
-![Overhead photo](ScreenShots/a2a1.png)
+![Overhead photo](ScreenShots/a2s1.png)
 Side View
-![side viiew photo](ScreenShots/a2a2.png)
+![side viiew photo](ScreenShots/a2s2.png)
 Displayed in 3d
-![3d photo](ScreenShots/a2a3.png)
+![3d photo](ScreenShots/a2s3.png)
