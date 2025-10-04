@@ -20,7 +20,7 @@ In this museum you'll find the 10 prominent celestial bodies that grace our sola
 Video that shows me walking around the scene and activating exhibits.
 https://www.youtube.com/watch?v=hs_eAtpMVx4
 
-##### Photos:
+#### Photos:
 Overhead
 ![Overhead photo](ScreenShots/a2s1.png)
 Side View
