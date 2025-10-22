@@ -27,3 +27,14 @@ Side View
 ![side viiew photo](ScreenShots/a2s2.png)
 Displayed in 3d
 ![3d photo](ScreenShots/a2s3.png)
+
+---
+
+## Project 3 - Puzzle
+
+In this Scene you will find a puzzle to complete.
+
+#### BONUSES:
+
+#### Photos:
+
