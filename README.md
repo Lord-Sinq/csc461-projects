@@ -6,28 +6,28 @@ UNCW CSC-461 Virtual Reality group projects
 - Sinclair DeYoung
 
 ---
+<details open>
+  <summary>## Project 2 - Museum</summary>
 
-## Project 2 - Museum
-
-In this museum you'll find the 10 prominent celestial bodies that grace our solar system. We chose the solar system due to a mutual fascination with the subject. To get some information about the exhibits, approach the pedestals they rest and some text will appear.
-
-#### BONUSES:
-
-1) There are 10 exhibits, each with a reactive element.
-2) Each exhibit is animated to spin.
-
-
-Video that shows me walking around the scene and activating exhibits.
-https://www.youtube.com/watch?v=hs_eAtpMVx4
-
-#### Photos:
-Overhead
-![Overhead photo](ScreenShots/a2s1.png)
-Side View
-![side viiew photo](ScreenShots/a2s2.png)
-Displayed in 3d
-![3d photo](ScreenShots/a2s3.png)
-
+  In this museum you'll find the 10 prominent celestial bodies that grace our solar system. We chose the solar system due to a mutual fascination with the subject. To get some information about the exhibits, approach the pedestals they rest and some text will appear.
+  
+  #### BONUSES:
+  
+  1) There are 10 exhibits, each with a reactive element.
+  2) Each exhibit is animated to spin.
+  
+  
+  Video that shows me walking around the scene and activating exhibits.
+  https://www.youtube.com/watch?v=hs_eAtpMVx4
+  
+  #### Photos:
+  Overhead
+  ![Overhead photo](ScreenShots/a2s1.png)
+  Side View
+  ![side viiew photo](ScreenShots/a2s2.png)
+  Displayed in 3d
+  ![3d photo](ScreenShots/a2s3.png)
+</details>
 ---
 
 ## Project 3 - VR Assembly (Puzzle)
