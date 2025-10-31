@@ -28,16 +28,22 @@ UNCW CSC-461 Virtual Reality group projects
   Displayed in 3d
   ![3d photo](ScreenShots/a2s3.png)
 </details>
+
 ---
 
-## Project 3 - VR Assembly (Puzzle)
+<details open>
+  <summary>## Project 3 - VR Assembly (Puzzle)</summary>
+  
+  User are be able to assemble a virtual object by putting together the individual parts to build a casle. Above in text when entered the game, as shown in the third photo, are the instructions on how to interact.
 
-User are be able to assemble a virtual object by putting together the individual parts to build a casle. Above in text when entered the game, as shown in the third photo, are the instructions on how to interact.
-
-#### Photos:
-Overhead
-![Overhead photo](ScreenShots/a3s1.png)
-Side View
-![side viiew photo](ScreenShots/a3s2.png)
-Displayed in 3d
-![3d photo](ScreenShots/a3s3.png)
+  Video that shows how the game is played and the environment.
+  https://www.youtube.com/watch?v=xKWBF-AjXgw
+  
+  #### Photos:
+  Overhead
+  ![Overhead photo](ScreenShots/a3s1.png)
+  Side View
+  ![side viiew photo](ScreenShots/a3s2.png)
+  Displayed in 3d
+  ![3d photo](ScreenShots/a3s3.png)
+</details>
