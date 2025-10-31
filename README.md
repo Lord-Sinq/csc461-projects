@@ -30,11 +30,14 @@ Displayed in 3d
 
 ---
 
-## Project 3 - Puzzle
+## Project 3 - VR Assembly (Puzzle)
 
-In this Scene you will find a puzzle to complete.
-
-#### BONUSES:
+User are be able to assemble a virtual object by putting together the individual parts to build a casle. Above in text when entered the game, as shown in the third photo, are the instructions on how to interact.
 
 #### Photos:
-
+Overhead
+![Overhead photo](ScreenShots/a3s1.png)
+Side View
+![side viiew photo](ScreenShots/a3s2.png)
+Displayed in 3d
+![3d photo](ScreenShots/a3s3.png)
