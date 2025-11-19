@@ -8,7 +8,7 @@ UNCW CSC-461 Virtual Reality group projects
 ---
 
 ## Project 2
-<details open>
+<details>
   <summary>Museum</summary>
 
   In this museum you'll find the 10 prominent celestial bodies that grace our solar system. We chose the solar system due to a mutual fascination with the subject. To get some information about the exhibits, approach the pedestals they rest and some text will appear.
@@ -34,7 +34,7 @@ UNCW CSC-461 Virtual Reality group projects
 ---
 
 ## Project 3  
-<details open>
+<details>
   <summary>VR Assembly (Puzzle)</summary>
   
   User are be able to assemble a virtual object by putting together the individual parts to build a casle. Above in text when entered the game, as shown in the third photo, are the instructions on how to interact.
