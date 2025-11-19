@@ -7,6 +7,40 @@ UNCW CSC-461 Virtual Reality group projects
 
 ---
 
+## Final Project
+<details open>
+  <summary>Be The Music (BTM)</summary>
+
+  #### Photos:
+  Overhead
+  ![(BTM)Overhead photo](ScreenShots/BTMs1.png)
+  Side View
+  ![(BTM)side view photo](ScreenShots/BTMs2.png)
+  Displayed in 3d
+  ![(BTM)3d photo](ScreenShots/BTMs3.png)
+  
+</details>
+---
+
+## Project 3  
+<details>
+  <summary>VR Assembly (Puzzle)</summary>
+  
+  User are be able to assemble a virtual object by putting together the individual parts to build a casle. Above in text when entered the game, as shown in the third photo, are the instructions on how to interact.
+
+  Video that shows how the game is played and the environment.
+  https://www.youtube.com/watch?v=xKWBF-AjXgw
+  
+  #### Photos:
+  Overhead
+  ![Overhead photo](ScreenShots/a3s1.png)
+  Side View
+  ![side viiew photo](ScreenShots/a3s2.png)
+  Displayed in 3d
+  ![3d photo](ScreenShots/a3s3.png)
+</details>
+---
+
 ## Project 2
 <details>
   <summary>Museum</summary>
@@ -31,22 +65,3 @@ UNCW CSC-461 Virtual Reality group projects
   ![3d photo](ScreenShots/a2s3.png)
 </details>
 
----
-
-## Project 3  
-<details>
-  <summary>VR Assembly (Puzzle)</summary>
-  
-  User are be able to assemble a virtual object by putting together the individual parts to build a casle. Above in text when entered the game, as shown in the third photo, are the instructions on how to interact.
-
-  Video that shows how the game is played and the environment.
-  https://www.youtube.com/watch?v=xKWBF-AjXgw
-  
-  #### Photos:
-  Overhead
-  ![Overhead photo](ScreenShots/a3s1.png)
-  Side View
-  ![side viiew photo](ScreenShots/a3s2.png)
-  Displayed in 3d
-  ![3d photo](ScreenShots/a3s3.png)
-</details>
