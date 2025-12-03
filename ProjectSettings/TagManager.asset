@@ -9,6 +9,8 @@ TagManager:
   - SamplesInfoPanel
   - Actors
   - Note Prefab
+  - StickR
+  - StickL
   layers:
   - Default
   - TransparentFX
