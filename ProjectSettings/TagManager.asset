@@ -8,6 +8,9 @@ TagManager:
   - QDSUIBackplateGradient
   - SamplesInfoPanel
   - Actors
+  - Note Prefab
+  - StickR
+  - StickL
   layers:
   - Default
   - TransparentFX
