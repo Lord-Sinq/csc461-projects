@@ -118,19 +118,26 @@ public class GameStartController : MonoBehaviour
             return;
         }
 
+        Debug.Log($"SetUIElementsVisibility({isVisible}) called. Count = {uiElementsToHide.Length}");
+
         foreach (TextMeshPro tmp in uiElementsToHide)
         {
-            if (tmp != null)
+            if (tmp == null) continue;
+
+            // If this TextMeshPro sits on the same GameObject as the xrButton, skip it.
+            if (xrButton != null && tmp.gameObject == xrButton.gameObject)
             {
-                // The most reliable way to hide UI is to disable the GameObject.
-                tmp.gameObject.SetActive(isVisible);
-                
-                // OR you can disable the renderer component:
-                // tmp.enabled = isVisible;
-                
-                // OR you can change the alpha (transparency):
-                // tmp.color = new Color(tmp.color.r, tmp.color.g, tmp.color.b, isVisible ? 1f : 0f);
+                Debug.Log($"Skipping hide for '{tmp.gameObject.name}' because it is the XR button.");
+                continue;
             }
+
+            // Prefer disabling the TextMeshPro component rather than the whole GameObject.
+            // This prevents accidental disabling of other components (colliders, interactables, etc.)
+            tmp.enabled = isVisible;
+
+            // If you truly need to disable the whole object in some cases, use:
+            // tmp.gameObject.SetActive(isVisible);
+            // but be careful: that will disable any XR components on that GameObject.
         }
     }
 }
