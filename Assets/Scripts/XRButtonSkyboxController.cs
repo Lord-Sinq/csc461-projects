@@ -10,14 +10,16 @@ public class XRButtonSkyboxController : MonoBehaviour
     public Material skyboxMaterial;         // The skybox material
 
     [Header("Settings")]
-    public float dimDuration = 3f;          // How long to dim the skybox
-    public float targetExposure = 0.2f;     // Final dim level
+    public float dimDuration = 5f;          // How long to dim the skybox
+    public float targetExposure = 0.0f;     // Final dim level
 
     [Header("Audio (optional)")]
     public AudioSource soundEffect;         // Play when light turns on
 
     private void Start()
     {
+        if (skyboxMaterial != null)
+            skyboxMaterial.SetFloat("_Exposure", 2f);
         // Ensure the light starts off
         if (pointLight != null)
             pointLight.intensity = 0f;
@@ -67,7 +69,7 @@ public class XRButtonSkyboxController : MonoBehaviour
 
         // Turn on the light immediately
         if (pointLight != null)
-            pointLight.intensity = 2f; // Adjust intensity as desired
+            pointLight.intensity = 100f; // Adjust intensity as desired
 
         // Play sound effect (optional)
         if (soundEffect != null)
