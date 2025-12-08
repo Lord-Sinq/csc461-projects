@@ -118,7 +118,7 @@ public class GameStartController : MonoBehaviour
             return;
         }
 
-        foreach (TextMeshProUGUI tmp in uiElementsToHide)
+        foreach (TextMeshPro tmp in uiElementsToHide)
         {
             if (tmp != null)
             {
