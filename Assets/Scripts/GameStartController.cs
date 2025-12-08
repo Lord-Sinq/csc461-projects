@@ -15,6 +15,7 @@ public class GameStartController : MonoBehaviour
     public float lightIntensity = 100f; // Light turns on to this intensity
 
     [Header("Audio")]
+    public AudioClip musicClip;
     public AudioClip soundEffectClip; // assign your MP3 here
     private AudioSource audioSource;   // internal AudioSource to play the clip
 
@@ -85,9 +86,15 @@ public class GameStartController : MonoBehaviour
         if (soundEffectClip != null)
             audioSource.PlayOneShot(soundEffectClip);
 
-        yield return new WaitForSeconds(5f);
 
         // --- 4. Start Note Spawner ---
+        if (musicClip != null)
+        {
+            audioSource.clip = musicClip;
+            audioSource.loop = false;
+            audioSource.Play();
+        }
+
         if (noteSpawner != null)
             noteSpawner.StartSpawning();
     }
