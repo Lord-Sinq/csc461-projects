@@ -27,7 +27,27 @@ public class DrumTopHitZone : MonoBehaviour
     [Header("Debug")]
     public bool debugLogs = true;
 
+    [Header("Audio")]
+    public AudioClip drumSound;
+    private AudioSource audioSource;
+
+    [Header("Floating Text")] // <-- NEW HEADER
+    [Tooltip("The FloatingText prefab to instantiate on hit.")]
+    public FloatingText floatingTextPrefab;
+    [Tooltip("The position where the floating text should appear.")]
+    public Transform textSpawnPoint;
+
     float lastHitTime = -10f;
+
+    void Start()
+    {
+        // Ensure there is an AudioSource component on this GameObject
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+        
+        audioSource.playOnAwake = false; // Prevents the sound from playing when the scene loads
+    }
 
     void Reset()
     {
@@ -50,6 +70,10 @@ public class DrumTopHitZone : MonoBehaviour
         {
             if (debugLogs) Debug.Log($"DrumTopHitZone: hit ignored due to cooldown ({Time.time - lastHitTime:F3}s)");
             return;
+        }
+        if (audioSource != null && drumSound != null)
+        {
+            audioSource.PlayOneShot(drumSound);
         }
 
         lastHitTime = Time.time;
@@ -112,7 +136,7 @@ public class DrumTopHitZone : MonoBehaviour
                 if ((stickSide == DrumStick.Side.Left && !noteIsLeft) ||
                     (stickSide == DrumStick.Side.Right && noteIsLeft))
                 {
-                    if (debugLogs) Debug.Log($"DrumTopHitZone: skipping note '{note.gameObject.name}' — side mismatch (noteIsLeft={noteIsLeft})");
+                    if (debugLogs) Debug.Log($"DrumTopHitZone: skipping note '{note.gameObject.name}' ï¿½ side mismatch (noteIsLeft={noteIsLeft})");
                     continue;
                 }
 
