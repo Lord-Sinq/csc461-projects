@@ -19,16 +19,15 @@ public class FloatingTextSpawner : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
-            SpawnText("Up!");
+            SpawnText("Perfect!");
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
-            SpawnText("Down!");
+            SpawnText("Okay");
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
-            SpawnText("Left!");
+            SpawnText("Your SUCK!");
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-            SpawnText("Right!");
+
     }
 
     // Simple spawn at canvas center
