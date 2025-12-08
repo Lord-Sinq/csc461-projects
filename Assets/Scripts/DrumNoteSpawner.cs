@@ -222,7 +222,7 @@ public class DrumNoteSpawner : MonoBehaviour
 
         while (true)
         {
-            float now = Time.time - spawnStartTime;
+            float now = Time.time - spawnStartTime + 1.5f;
 
             // if current event time has arrived => spawn
             if (index < spawnSchedule.Count && now >= spawnSchedule[index].time)

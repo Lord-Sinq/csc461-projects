@@ -32919,14 +32919,286 @@ MonoBehaviour:
   maxNotes: 10
   useSchedule: 1
   spawnSchedule:
-  - time: 3.5
+  - time: 5
     isLeft: 0
-  - time: 5.22
+  - time: 6.722
     isLeft: 0
-  - time: 8.4
+  - time: 8.3
+    isLeft: 0
+  - time: 9.9
+    isLeft: 0
+  - time: 11.5
     isLeft: 1
-  - time: 0
+  - time: 13
     isLeft: 1
+  - time: 14.4
+    isLeft: 1
+  - time: 16.3
+    isLeft: 1
+  - time: 17.957
+    isLeft: 0
+  - time: 19.698
+    isLeft: 1
+  - time: 21.244
+    isLeft: 0
+  - time: 22.849
+    isLeft: 1
+  - time: 24.449
+    isLeft: 0
+  - time: 25.241
+    isLeft: 0
+  - time: 26.01
+    isLeft: 0
+  - time: 26.825
+    isLeft: 0
+  - time: 27.612
+    isLeft: 0
+  - time: 28.44
+    isLeft: 0
+  - time: 29.227
+    isLeft: 0
+  - time: 30.01
+    isLeft: 0
+  - time: 30.9
+    isLeft: 0
+  - time: 31.7
+    isLeft: 0
+  - time: 33.35
+    isLeft: 0
+  - time: 35
+    isLeft: 0
+  - time: 35.7
+    isLeft: 0
+  - time: 36.5
+    isLeft: 0
+  - time: 37.4
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
+  - time: 26.9
+    isLeft: 0
   loopSchedule: 0
   enableEditorControls: 0
 --- !u!1 &1117618332
