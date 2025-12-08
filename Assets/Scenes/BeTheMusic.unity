@@ -4366,7 +4366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f246f9a416fe4a43b4af746b25ccf9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetOpacity: 0.5
+  targetOpacity: 0.59
   hideTMPs:
   - {fileID: 1602327493}
   - {fileID: 619332056}
@@ -14972,6 +14972,8 @@ MonoBehaviour:
   musicClip: {fileID: 8300000, guid: 81eda95513f1b4d2b84cad055438b01f, type: 3}
   soundEffectClip: {fileID: 8300000, guid: c4625d7536af0754db0476da68cc637f, type: 3}
   noteSpawner: {fileID: 1115461862}
+  uiElementsToHide:
+  - {fileID: 0}
 --- !u!4 &372170999
 Transform:
   m_ObjectHideFlags: 0
@@ -32916,43 +32918,43 @@ MonoBehaviour:
   rightNoteColor: {r: 0.7607844, g: 0.03529412, b: 0.40784317, a: 1}
   noteSize: 0.3
   autoSpawn: 0
-  maxNotes: 10
+  maxNotes: 20
   useSchedule: 1
   spawnSchedule:
   - time: 5
-    isLeft: 0
+    isLeft: 1
   - time: 6.722
-    isLeft: 0
+    isLeft: 1
   - time: 8.3
-    isLeft: 0
+    isLeft: 1
   - time: 9.9
-    isLeft: 0
+    isLeft: 1
   - time: 11.5
-    isLeft: 1
+    isLeft: 0
   - time: 13
-    isLeft: 1
+    isLeft: 0
   - time: 14.4
-    isLeft: 1
+    isLeft: 0
   - time: 16.3
-    isLeft: 1
+    isLeft: 0
   - time: 17.957
-    isLeft: 0
+    isLeft: 1
   - time: 19.698
-    isLeft: 1
+    isLeft: 0
   - time: 21.244
-    isLeft: 0
-  - time: 22.849
     isLeft: 1
+  - time: 22.849
+    isLeft: 0
   - time: 24.449
-    isLeft: 0
+    isLeft: 1
   - time: 25.241
-    isLeft: 0
+    isLeft: 1
   - time: 26.01
-    isLeft: 0
+    isLeft: 1
   - time: 26.825
-    isLeft: 0
+    isLeft: 1
   - time: 27.612
-    isLeft: 0
+    isLeft: 1
   - time: 28.44
     isLeft: 0
   - time: 29.227
@@ -32962,59 +32964,59 @@ MonoBehaviour:
   - time: 30.9
     isLeft: 0
   - time: 31.7
-    isLeft: 0
+    isLeft: 1
   - time: 33.35
-    isLeft: 0
+    isLeft: 1
   - time: 35
-    isLeft: 0
+    isLeft: 1
   - time: 35.7
     isLeft: 0
   - time: 36.5
-    isLeft: 0
+    isLeft: 1
   - time: 37.4
+    isLeft: 1
+  - time: 39
+    isLeft: 1
+  - time: 40.8
+    isLeft: 1
+  - time: 41.72
     isLeft: 0
-  - time: 26.9
+  - time: 42.523
+    isLeft: 1
+  - time: 43.356
     isLeft: 0
-  - time: 26.9
+  - time: 44.111
+    isLeft: 1
+  - time: 45.707
+    isLeft: 1
+  - time: 46.525
     isLeft: 0
-  - time: 26.9
+  - time: 47.295
+    isLeft: 1
+  - time: 48.968
+    isLeft: 1
+  - time: 50.52
+    isLeft: 1
+  - time: 50.779
     isLeft: 0
-  - time: 26.9
+  - time: 50.978
+    isLeft: 1
+  - time: 51.195
     isLeft: 0
-  - time: 26.9
+  - time: 51.492
+    isLeft: 1
+  - time: 51.695
     isLeft: 0
-  - time: 26.9
+  - time: 6.722
     isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
-  - time: 26.9
-    isLeft: 0
+  - time: 5
+    isLeft: 1
+  - time: 5
+    isLeft: 1
+  - time: 5
+    isLeft: 1
+  - time: 5
+    isLeft: 1
   - time: 26.9
     isLeft: 0
   - time: 26.9

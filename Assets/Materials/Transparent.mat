@@ -27,11 +27,7 @@ Material:
   - DepthOnly
   - SHADOWCASTER
   - MOTIONVECTORS
-<<<<<<< Updated upstream
   m_LockedProperties: :m_LightmapFlags
-=======
-  m_LockedProperties: 
->>>>>>> Stashed changes
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []

@@ -170,19 +170,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.probuilder": {
-<<<<<<< Updated upstream
       "version": "6.0.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.shadergraph": "17.0.3",
-=======
-      "version": "6.0.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.shadergraph": "17.0.2",
->>>>>>> Stashed changes
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.physics": "1.0.0",
         "com.unity.settings-manager": "1.0.3"
@@ -295,11 +287,7 @@
       }
     },
     "com.unity.timeline": {
-<<<<<<< Updated upstream
       "version": "1.8.9",
-=======
-      "version": "1.8.7",
->>>>>>> Stashed changes
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -320,11 +308,7 @@
       }
     },
     "com.unity.visualscripting": {
-<<<<<<< Updated upstream
       "version": "1.9.9",
-=======
-      "version": "1.9.5",
->>>>>>> Stashed changes
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -343,11 +327,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.interaction.toolkit": {
-<<<<<<< Updated upstream
       "version": "3.0.9",
-=======
-      "version": "3.0.7",
->>>>>>> Stashed changes
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -384,13 +364,8 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< Updated upstream
     "com.unity.xr.openxr": {
       "version": "1.14.3",
-=======
-    "com.unity.xr.oculus": {
-      "version": "4.5.2",
->>>>>>> Stashed changes
       "depth": 0,
       "source": "registry",
       "dependencies": {
