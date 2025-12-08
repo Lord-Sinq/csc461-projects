@@ -25,7 +25,7 @@ public class DrumNoteSpawner : MonoBehaviour
     public float noteSize = 0.3f;
     
     [Header("Game Control")]
-    public bool autoSpawn = true;
+    public bool autoSpawn = false;
     public int maxNotes = 10;
     
     private List<GameObject> activeNotes = new List<GameObject>();
@@ -80,7 +80,7 @@ public class DrumNoteSpawner : MonoBehaviour
         #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Q)) SpawnLeftNote();
         if (Input.GetKeyDown(KeyCode.E)) SpawnRightNote();
-        if (Input.GetKeyDown(KeyCode.Space)) ToggleSpawning();
+        //if (Input.GetKeyDown(KeyCode.Space)) ToggleSpawning();
         #endif
     }
     

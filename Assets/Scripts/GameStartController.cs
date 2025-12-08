@@ -1,212 +1,100 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.UI;
+using System.Collections;
 
 public class GameStartController : MonoBehaviour
 {
-    [Header("Start Button")]
-    public XRSimpleInteractable startButton;  // 3D button in VR space
-    public GameObject startButtonUI;           // Optional UI button
-    
-    [Header("Game Systems")]
-    public DrumNoteSpawner noteSpawner;       // Your existing spawner script
-    public GameObject drumSticks;             // Drum sticks to enable
-    public GameObject countdownDisplay;       // 3, 2, 1, GO! display
-    
-    [Header("Settings")]
-    public float countdownTime = 3f;          // 3 second countdown
-    public bool autoStartOnPickup = false;    // Start when sticks are picked up
-    
+    [Header("XR Button")]
+    public XRSimpleInteractable xrButton;
+
+    [Header("Skybox & Lighting")]
+    public Material skyboxMaterial;
+    public Light pointLight;
+    public float dimDuration = 3f;      // Seconds to dim skybox
+    public float targetExposure = 0.2f; // Final exposure
+    public float lightIntensity = 100f; // Light turns on to this intensity
+
     [Header("Audio")]
-    public AudioClip countdownBeep;
-    public AudioClip gameStartSound;
-    
-    private bool gameStarted = false;
-    private AudioSource audioSource;
-    
-    void Start()
-    {
-        // Get audio source
+    public AudioClip soundEffectClip; // assign your MP3 here
+    private AudioSource audioSource;   // internal AudioSource to play the clip
+
+    [Header("Game Systems")]
+    public DrumNoteSpawner noteSpawner; // Your existing spawner
+
+    private bool hasStarted = false;
+
+    private void Start()
+    {   
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
-        
-        // Setup start button
-        if (startButton != null)
-        {
-            startButton.selectEntered.AddListener(OnStartButtonPressed);
-        }
-        
-        // Setup UI button
-        if (startButtonUI != null)
-        {
-            Button uiButton = startButtonUI.GetComponent<Button>();
-            if (uiButton != null)
-            {
-                uiButton.onClick.AddListener(StartGame);
-            }
-        }
-        
-        // Disable note spawning initially
-        if (noteSpawner != null)
-        {
-            // Make sure your DrumNoteSpawner has a way to stop/start
-            // If not, add: public void StopSpawning() and public void StartSpawning()
-            noteSpawner.enabled = false;
-        }
-        
-        // Hide countdown
-        if (countdownDisplay != null)
-            countdownDisplay.SetActive(false);
-        
-        Debug.Log("Game ready. Press START button to begin!");
+        // Initial skybox exposure
+        if (skyboxMaterial != null)
+            skyboxMaterial.SetFloat("_Exposure", 2.5f);
+
+        // Initial light off
+        if (pointLight != null)
+            pointLight.intensity = 0f;
+
+        // Hook up XR button
+        if (xrButton != null)
+            xrButton.selectEntered.AddListener(OnButtonPressed);
     }
-    
-    void OnStartButtonPressed(SelectEnterEventArgs args)
+
+    private void Update()
     {
-        if (!gameStarted)
-        {
-            StartGame();
-        }
-    }
-    
-    public void StartGame()
-    {
-        if (gameStarted) return;
-        
-        gameStarted = true;
-        
-        // Disable start button
-        if (startButton != null)
-            startButton.enabled = false;
-        
-        // Start countdown
-        StartCoroutine(GameStartSequence());
-    }
-    
-    System.Collections.IEnumerator GameStartSequence()
-    {
-        Debug.Log("Game starting in 3...");
-        
-        // Show countdown
-        if (countdownDisplay != null)
-        {
-            countdownDisplay.SetActive(true);
-            Text countdownText = countdownDisplay.GetComponent<Text>();
-            
-            // Countdown from 3
-            for (int i = 3; i > 0; i--)
-            {
-                if (countdownText != null)
-                    countdownText.text = i.ToString();
-                
-                // Play beep
-                if (countdownBeep != null)
-                    audioSource.PlayOneShot(countdownBeep);
-                
-                yield return new WaitForSeconds(1f);
-            }
-            
-            // GO!
-            if (countdownText != null)
-                countdownText.text = "GO!";
-            
-            if (gameStartSound != null)
-                audioSource.PlayOneShot(gameStartSound);
-            
-            yield return new WaitForSeconds(0.5f);
-            
-            // Hide countdown
-            countdownDisplay.SetActive(false);
-        }
-        else
-        {
-            // No visual countdown, just wait
-            yield return new WaitForSeconds(countdownTime);
-        }
-        
-        // START THE GAME!
-        StartGameplay();
-    }
-    
-    void StartGameplay()
-    {
-        Debug.Log("GAME STARTED! Notes spawning now!");
-        
-        // Enable note spawning
-        if (noteSpawner != null)
-        {
-            noteSpawner.enabled = true;
-            
-            // If your spawner has a StartSpawning method, call it
-            var method = noteSpawner.GetType().GetMethod("StartSpawning");
-            if (method != null)
-            {
-                method.Invoke(noteSpawner, null);
-            }
-            else
-            {
-                // Try to start InvokeRepeating
-                noteSpawner.InvokeRepeating("SpawnRandomNote", 0f, 1.5f);
-            }
-        }
-        
-        // Enable drum sticks if they were disabled
-        if (drumSticks != null)
-        {
-            drumSticks.SetActive(true);
-            
-            // Make sticks grabbable
-            XRGrabInteractable[] grabComponents = drumSticks.GetComponentsInChildren<XRGrabInteractable>();
-            foreach (var grab in grabComponents)
-            {
-                grab.enabled = true;
-            }
-        }
-        
-        // You could also start background music here
-    }
-    
-    void Update()
-    {
-        // Optional: Start game when sticks are picked up
-        if (autoStartOnPickup && !gameStarted)
-        {
-            // Check if sticks are being held
-            if (AreSticksPickedUp())
-            {
-                StartGame();
-            }
-        }
-        
-        // Editor testing
         #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
-        {
-            StartGame();
-        }
+        if (Input.GetKeyDown(KeyCode.Space))
+            OnButtonPressed(null);
         #endif
     }
-    
-    bool AreSticksPickedUp()
+
+    private void OnButtonPressed(SelectEnterEventArgs args)
     {
-        // Check if drum sticks are being held
-        // This depends on your XR setup
-        XRGrabInteractable[] grabs = FindObjectsOfType<XRGrabInteractable>();
-        foreach (var grab in grabs)
-        {
-            if (grab.isSelected) // Stick is being held
-                return true;
-        }
-        return false;
+        if (hasStarted) return; // Only trigger once
+        hasStarted = true;
+
+        StartCoroutine(StartSequence());
     }
-    
-    void OnDestroy()
+
+    private IEnumerator StartSequence()
     {
-        // Clean up
-        if (startButton != null)
+        // --- 1. Dim Skybox ---
+        if (skyboxMaterial != null)
         {
-            startButton.selectEntered.RemoveListener(OnStartButtonPressed);
+            float initialExposure = skyboxMaterial.GetFloat("_Exposure");
+            float timer = 0f;
+
+            while (timer < dimDuration)
+            {
+                timer += Time.deltaTime;
+                float t = timer / dimDuration;
+                float newExposure = Mathf.Lerp(initialExposure, targetExposure, t);
+                skyboxMaterial.SetFloat("_Exposure", newExposure);
+                yield return null;
+            }
+
+            skyboxMaterial.SetFloat("_Exposure", targetExposure);
         }
+
+        // --- 2. Turn on Light ---
+        if (pointLight != null)
+            pointLight.intensity = lightIntensity;
+
+        // --- 3. Play Sound ---
+        if (soundEffectClip != null)
+            audioSource.PlayOneShot(soundEffectClip);
+
+        yield return new WaitForSeconds(5f);
+
+        // --- 4. Start Note Spawner ---
+        if (noteSpawner != null)
+            noteSpawner.StartSpawning();
+    }
+
+    private void OnDestroy()
+    {
+        if (xrButton != null)
+            xrButton.selectEntered.RemoveListener(OnButtonPressed);
     }
 }
