@@ -3,35 +3,37 @@ using TMPro;
 
 public class FloatingText : MonoBehaviour
 {
-    public float moveSpeed = 30f;     // Upward movement speed
-    public float lifeTime = 1f;       // How long before disappearing
-    public TextMeshProUGUI textUI;    // Reference to TMP text
+    public float moveSpeed = 30f;
+    public float lifetime = 1f;
 
-    private float timer = 0f;
-    private Color startColor;
+    private TextMeshProUGUI text;
 
-    void Start()
+    void Awake()
     {
-        startColor = textUI.color;
+        text = GetComponent<TextMeshProUGUI>();
+    }
+
+    public void SetText(string message)
+    {
+        if (text != null)
+        {
+            text.text = message;  // THIS MUST SET THE TEXT
+        }
+
+        Destroy(gameObject, lifetime);  // auto-remove
     }
 
     void Update()
     {
-        // Move upward
+        // move up
         transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
 
-        // Fade out
-        timer += Time.deltaTime;
-        float alpha = Mathf.Lerp(1f, 0f, timer / lifeTime);
-        textUI.color = new Color(startColor.r, startColor.g, startColor.b, alpha);
-
-        // Destroy after lifetime
-        if (timer >= lifeTime)
-            Destroy(gameObject);
-    }
-
-    public void SetMessage(string message)
-    {
-        textUI.text = message;
+        // fade out
+        if (text != null)
+        {
+            Color c = text.color;
+            c.a -= Time.deltaTime / lifetime;
+            text.color = c;
+        }
     }
 }
