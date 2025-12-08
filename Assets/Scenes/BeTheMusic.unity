@@ -24460,7 +24460,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -26060,6 +26060,9 @@ MonoBehaviour:
   noteTag: Note
   hitCooldown: 0.08
   debugLogs: 1
+  drumSound: {fileID: 0}
+  floatingTextPrefab: {fileID: 0}
+  textSpawnPoint: {fileID: 0}
 --- !u!64 &717615783
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38174,8 +38177,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
