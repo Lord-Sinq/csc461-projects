@@ -181,6 +181,7 @@ public class GameStartController : MonoBehaviour
         
         // Editor testing
         #if UNITY_EDITOR
+<<<<<<< Updated upstream
         if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
         {
             StartGame();
@@ -194,11 +195,61 @@ public class GameStartController : MonoBehaviour
         // This depends on your XR setup
         XRGrabInteractable[] grabs = FindObjectsOfType<XRGrabInteractable>();
         foreach (var grab in grabs)
+=======
+        if (Input.GetKeyDown(KeyCode.Space))
+            PressButton();
+        #endif
+    }
+
+    // Public method for external triggers (ButtonTriggerForwarder will call this)
+    public void PressButton()
+    {
+        if (hasStarted) return;
+        hasStarted = true;
+
+        // Mark global game state immediately so spawners that check GameState don't auto-run
+        GameState.GameStarted = true;
+        Debug.Log("GameStartController: GameState.GameStarted = true (start pressed).");
+
+        StartCoroutine(StartSequence());
+        Debug.Log("GameStartController: PressButton called - starting sequence.");
+    }
+
+    private void OnButtonPressed(SelectEnterEventArgs args)
+    {
+        PressButton();
+    }
+
+    private IEnumerator StartSequence()
+    {
+        // --- 1. Dim Skybox ---
+        if (skyboxMaterial != null)
+>>>>>>> Stashed changes
         {
             if (grab.isSelected) // Stick is being held
                 return true;
         }
+<<<<<<< Updated upstream
         return false;
+=======
+
+        // --- 2. Turn on Light ---
+        if (pointLight != null)
+            pointLight.intensity = lightIntensity;
+
+        // --- 3. Play Sound ---
+        if (soundEffectClip != null)
+            audioSource.PlayOneShot(soundEffectClip);
+
+        yield return new WaitForSeconds(5f);
+
+        // --- 4. Start Note Spawner ---
+        if (noteSpawner != null)
+        {
+            noteSpawner.StartSpawning();
+            Debug.Log("GameStartController: noteSpawner.StartSpawning() called.");
+        }
+>>>>>>> Stashed changes
     }
     
     void OnDestroy()

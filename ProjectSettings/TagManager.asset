@@ -11,6 +11,12 @@ TagManager:
   - Note Prefab
   - StickR
   - StickL
+<<<<<<< Updated upstream
+=======
+  - Note
+  - UIButton
+  - PlayerHand
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
