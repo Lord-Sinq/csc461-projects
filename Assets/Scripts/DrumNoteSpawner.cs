@@ -27,36 +27,10 @@ public class DrumNoteSpawner : MonoBehaviour
     [Header("Game Control")]
     public bool autoSpawn = true;
     public int maxNotes = 10;
-<<<<<<< Updated upstream
     
     private List<GameObject> activeNotes = new List<GameObject>();
     private Coroutine spawnRoutine;
     
-=======
-
-    [Header("Auto right-note (spawn without pressing start)")]
-    [Tooltip("If true, the spawner will continuously spawn right notes immediately at runtime.")]
-    public bool autoSpawnRight = false;
-    [Tooltip("Delay before the automatic right-note spawning begins.")]
-    public float autoRightStartDelay = 0f;
-
-    [Header("Scheduling")]
-    [Tooltip("If true, uses spawnSchedule to spawn notes at specific times (relative to StartSpawning).")]
-    public bool useSchedule = false;
-    [Tooltip("List of timed spawn events (seconds relative to StartSpawning).")]
-    public List<SpawnEvent> spawnSchedule = new List<SpawnEvent>();
-    [Tooltip("If true, schedule will loop when finished.")]
-    public bool loopSchedule = false;
-
-    [Header("Debug / Editor Controls")]
-    public bool enableEditorControls = false;
-
-    private List<GameObject> activeNotes = new List<GameObject>();
-    private Coroutine spawnRoutine;
-    private Coroutine rightSpawnRoutine;
-    private float spawnStartTime; // Time.time when StartSpawning was called
-
->>>>>>> Stashed changes
     void Start()
     {
         // Set defaults if not assigned
@@ -84,22 +58,8 @@ public class DrumNoteSpawner : MonoBehaviour
         Debug.Log("Two-note spawner ready");
         Debug.Log($"Left notes: {leftNoteColor} → {leftNoteTarget.position}");
         Debug.Log($"Right notes: {rightNoteColor} → {rightNoteTarget.position}");
-<<<<<<< Updated upstream
         
         if (autoSpawn)
-=======
-        Debug.Log($"DrumNoteSpawner: autoSpawn={autoSpawn} autoSpawnRight={autoSpawnRight} GameState.GameStarted={GameState.GameStarted}");
-
-        // Start right-note auto spawner if requested (independent of full game start)
-        if (autoSpawnRight)
-        {
-            rightSpawnRoutine = StartCoroutine(RightSpawnRoutine());
-            Debug.Log("DrumNoteSpawner: RightSpawnRoutine started because autoSpawnRight=true");
-        }
-
-        // Only auto-start schedule/free-run when autoSpawn true AND GameState.GameStarted
-        if (autoSpawn && GameState.GameStarted)
->>>>>>> Stashed changes
         {
             StartSpawning();
         }
@@ -216,67 +176,7 @@ public class DrumNoteSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnInterval);
         }
     }
-<<<<<<< Updated upstream
     
-=======
-
-    IEnumerator SpawnScheduledRoutine()
-    {
-        if (spawnSchedule == null || spawnSchedule.Count == 0)
-            yield break;
-
-        int index = 0;
-
-        while (true)
-        {
-            float now = Time.time - spawnStartTime;
-
-            // if current event time has arrived => spawn
-            if (index < spawnSchedule.Count && now >= spawnSchedule[index].time)
-            {
-                SpawnNote(spawnSchedule[index].isLeft);
-                index++;
-                continue;
-            }
-
-            // finished schedule
-            if (index >= spawnSchedule.Count)
-            {
-                if (loopSchedule)
-                {
-                    // reset and loop
-                    spawnStartTime = Time.time;
-                    index = 0;
-                    yield return null;
-                    continue;
-                }
-                else
-                {
-                    spawnRoutine = null;
-                    yield break;
-                }
-            }
-
-            // wait a small amount until the next scheduled time
-            float nextTime = spawnSchedule[index].time;
-            float wait = Mathf.Max(0.001f, nextTime - now);
-            yield return new WaitForSeconds(wait);
-        }
-    }
-
-    IEnumerator RightSpawnRoutine()
-    {
-        if (autoRightStartDelay > 0f)
-            yield return new WaitForSeconds(autoRightStartDelay);
-
-        while (true)
-        {
-            SpawnRightNote();
-            yield return new WaitForSeconds(spawnInterval);
-        }
-    }
-
->>>>>>> Stashed changes
     public void ClearAllNotes()
     {
         foreach (GameObject note in activeNotes)

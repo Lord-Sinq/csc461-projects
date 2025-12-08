@@ -60,7 +60,7 @@ public class PuzzlePiece : MonoBehaviour
 
         if (rb != null)
         {
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.isKinematic = true;
             rb.useGravity = false;

@@ -9,7 +9,7 @@ public class VRHomeWithControllers : MonoBehaviour
     public XRController rightController;
     
     [Header("Start Button")]
-    public XRSimpleInteractable startButton; // 3D button with XR Simple Interactable
+    public UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable startButton; // 3D button with XR Simple Interactable
     
     [Header("Scene Settings")]
     public string gameSceneName = "GameScene";
@@ -53,7 +53,7 @@ public class VRHomeWithControllers : MonoBehaviour
             buttonRenderer.material = hoverMaterial;
         
         // Haptic feedback on hover
-        if (args.interactorObject is XRBaseControllerInteractor controllerInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInputInteractor controllerInteractor)
         {
             SendHapticImpulse(controllerInteractor.xrController, 0.2f, 0.1f);
         }
@@ -75,7 +75,7 @@ public class VRHomeWithControllers : MonoBehaviour
             buttonRenderer.material = pressedMaterial;
         
         // Haptic feedback
-        if (args.interactorObject is XRBaseControllerInteractor controllerInteractor)
+        if (args.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRBaseInputInteractor controllerInteractor)
         {
             SendHapticImpulse(controllerInteractor.xrController, 0.5f, 0.2f);
         }
