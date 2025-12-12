@@ -10,7 +10,7 @@ UNCW CSC-461 Virtual Reality group projects
 ## Final Project
 <details open>
   <summary>Be The Music (BTM)</summary>
-  ScreenShots/BeTheMusic.docx
+  <a herf="ScreenShots/BedTheMusic.docx" download>BeTheMusic.docx</a>
 
   #### Photos:
   Overhead
