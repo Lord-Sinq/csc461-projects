@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections;
 using TMPro;
+using UnityEditor.TextCore.Text;
 
 public class GameStartController : MonoBehaviour
 {
@@ -59,19 +60,17 @@ public class GameStartController : MonoBehaviour
             pointLight.intensity = 0f;
 
         // Hook up XR button
-        if (xrButton != null)
-            xrButton.selectEntered.AddListener(OnButtonPressed);
     }
 
     private void Update()
     {
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Space))
-            OnButtonPressed(null);
+            OnButtonPressed();
 #endif
     }
 
-    private void OnButtonPressed(SelectEnterEventArgs args)
+    public void OnButtonPressed()
     {
         if (hasStarted) return; // Only trigger once
         hasStarted = true;
@@ -97,6 +96,18 @@ public class GameStartController : MonoBehaviour
 
             pointLight.intensity = 0f;
         }
+        if (scoreText != null)
+        {
+            RectTransform rt = scoreText.GetComponent<RectTransform>();
+            if (rt != null)
+            {
+                // Set new position (localPosition) instantly
+                rt.localPosition = new Vector3(-11.73f, 6, 2.3f);
+            }
+
+            // Set new font size instantly
+            scoreText.fontSize = 15f;//xample font size
+        }
 
         // Restore skybox exposure gradually
         if (skyboxMaterial != null)
@@ -115,6 +126,8 @@ public class GameStartController : MonoBehaviour
             }
 
             skyboxMaterial.SetFloat("_Exposure", targetExposureValue);
+
+            hasStarted = false;
         }
     }
     private IEnumerator MonitorSongEnd()
@@ -129,7 +142,21 @@ public class GameStartController : MonoBehaviour
 
     private IEnumerator StartSequence()
     {
+        
         SetUIElementsVisibility(false);
+
+        if (scoreText != null)
+        {
+            RectTransform rt = scoreText.GetComponent<RectTransform>();
+            if (rt != null)
+            {
+                // Set new position (localPosition) instantly
+                rt.localPosition = new Vector3(-6.311f, 1.954f, 0);
+            }
+
+            // Set new font size instantly
+            scoreText.fontSize = 4f;//ample font size
+        }
 
         // --- 1. Dim Skybox ---
         if (skyboxMaterial != null)
@@ -204,11 +231,7 @@ public class GameStartController : MonoBehaviour
         Debug.Log($"GameStartController: ShowHitFeedback('{msg}') at {pos}");
     }
 
-    private void OnDestroy()
-    {
-        if (xrButton != null)
-            xrButton.selectEntered.RemoveListener(OnButtonPressed);
-    }
+
     private void SetUIElementsVisibility(bool isVisible)
     {
         // --- Hide elements ---

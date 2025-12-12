@@ -12,6 +12,8 @@ TagManager:
   - StickR
   - StickL
   - Note
+  - MetaController
+  - DrumStick
   layers:
   - Default
   - TransparentFX
